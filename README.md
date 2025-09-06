@@ -108,10 +108,5 @@ Interactive Client
 
 User: Show me all tasks
 Assistant: Here are the tasks grouped by section...
-🛡️ Security Notes
-Secrets like API tokens must not be hardcoded in code.
 
-Store sensitive values in .env (already .gitignored).
-
-Rotate tokens if they were exposed in commits.
 
