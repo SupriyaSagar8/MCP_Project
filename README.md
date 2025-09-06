@@ -39,21 +39,16 @@ MCP_Project/
 │── requirements.txt # Dependencies
 │── .env # Environment variables (ignored by Git)
 
-yaml
-Copy code
-
----
 
 ## ⚙️ Setup & Installation
 
 1. **Clone the repo**
-```bash
+
 git clone https://github.com/<your-username>/MCP_Project.git
 cd MCP_Project
 Create & activate a virtual environment
 
-bash
-Copy code
+
 python -m venv venv
 # Windows
 venv\Scripts\activate
@@ -61,34 +56,30 @@ venv\Scripts\activate
 source venv/bin/activate
 Install dependencies
 
-bash
-Copy code
+
 pip install -r requirements.txt
 Configure environment variables
 Create a .env file in the project root:
 
-ini
-Copy code
+
 OPENAI_API_KEY=your-openai-key
 ATLASSIAN_API_TOKEN=your-atlassian-token
 EMAIL=your-email
 JIRA_BASE_URL=https://your-jira-instance.atlassian.net
 ▶️ Running the Project
 1. Start the Todo List API (FastAPI app)
-bash
-Copy code
+
+
 uvicorn main:app --reload --port 8000
 Open http://127.0.0.1:8000/docs for Swagger UI.
 
 2. Start the MCP Server
-bash
-Copy code
+
 python mcp_server.py
 This will expose SSE on: http://127.0.0.1:8082/sse
 
 3. Run the Client
-bash
-Copy code
+
 python client.py
 Type messages, and the assistant will process them using the MCP server and Todo API.
 Type exit to quit.
@@ -96,8 +87,7 @@ Type exit to quit.
 📌 Example Usage
 Add a Task
 
-bash
-Copy code
+
 POST /tasks/backlog
 {
   "title": "Finish project",
@@ -106,8 +96,7 @@ POST /tasks/backlog
 }
 Move a Task
 
-bash
-Copy code
+
 POST /tasks/move
 {
   "taskId": "1234-abcd",
@@ -116,8 +105,7 @@ POST /tasks/move
 }
 Interactive Client
 
-sql
-Copy code
+
 User: Show me all tasks
 Assistant: Here are the tasks grouped by section...
 🛡️ Security Notes
